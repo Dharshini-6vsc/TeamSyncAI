@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TeamSync AI | Project Workspace</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#dashboard"><span class="brand-icon">T</span><span>TeamSync <b>AI</b><small>PROJECT WORKSPACE</small></span></a>
+    <p class="nav-label">WORKSPACE</p>
+    <button class="nav-link active" data-view="dashboard">▦ <span>Dashboard</span></button>
+    <button class="nav-link" data-view="matching">✦ <span>AI Team Matching</span></button>
+    <button class="nav-link" data-view="budget">₹ <span>Budget Manager</span></button>
+    <button class="nav-link" data-view="tracker">✓ <span>Project Tracker</span></button>
+    <button class="nav-link" data-view="finalize">◈ <span>Product Finalization</span></button>
+    <button class="nav-link" data-view="feedback">☆ <span>Feedback & Evaluation</span></button>
+    <div class="sidebar-card"><span class="spark">✦</span><b>Build better teams.</b><p>Turn project ideas into real outcomes with smarter collaboration.</p></div>
+    <div class="sidebar-bottom">Student collaboration workspace<br><span>HTML · CSS · JavaScript</span></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div><p class="eyebrow">TEAMSYNC AI / WORKSPACE</p><h1 id="pageTitle">Dashboard overview</h1></div>
+      <div class="profile"><span class="online"></span><span class="profile-avatar">TS</span><div><b>Project Team</b><small>Student workspace</small></div></div>
+    </header>
+
+    <section id="dashboard" class="view active-view">
+      <div class="hero">
+        <div class="hero-copy"><span class="hero-pill">✦ ONE SPACE. EVERY PROJECT.</span><h2>Ideas become impact<br>when teams work together.</h2><p>Match skills, plan budgets, track progress and bring your final product to life.</p><button class="btn btn-white" data-go="matching">Explore AI matching <span>→</span></button></div>
+        <div class="hero-graphic" aria-hidden="true"><div class="ring ring-one"></div><div class="ring ring-two"></div><div class="orb">✦</div><div class="float float-a">✦ AI matching</div><div class="float float-b">✓ Project progress</div><div class="float float-c">↗ Teamwork</div></div>
+      </div>
+      <div class="section-heading"><div><h2>Workspace snapshot</h2><p>Everything your team needs, at a glance.</p></div><button class="btn btn-primary" data-go="tracker">＋ Manage project</button></div>
+      <div class="stats">
+        <article class="stat-card"><span class="stat-icon purple">▤</span><span>Active projects</span><strong id="statProjects">1</strong><small>In your workspace</small></article>
+        <article class="stat-card"><span class="stat-icon blue">♧</span><span>Student profiles</span><strong id="statStudents">4</strong><small>Available for matching</small></article>
+        <article class="stat-card"><span class="stat-icon green">₹</span><span>Budget remaining</span><strong id="statRemaining">₹2,200</strong><small id="statSpent">₹2,800 spent so far</small></article>
+        <article class="stat-card"><span class="stat-icon orange">✓</span><span>Task completion</span><strong id="statProgress">33%</strong><small id="statTasks">1 of 3 tasks completed</small></article>
+      </div>
+      <div class="section-heading"><div><h2>Your project</h2><p>Open a module to manage each stage.</p></div><span class="status-chip">● In development</span></div>
+      <article class="project-card"><div class="project-card-top"><span class="domain-tag">ARTIFICIAL INTELLIGENCE</span><span class="project-id">PROJECT #001</span></div><h3 id="dashboardProjectTitle">AI Student Project</h3><p class="muted" id="dashboardSkills">Python · Machine Learning · Web Development</p><div class="project-summary"><div><span>Budget used</span><b id="budgetUsedLabel">56%</b><div class="progress-track"><div id="budgetUsedBar" class="progress-fill" style="width:56%"></div></div></div><div><span>Tasks completed</span><b id="taskUsedLabel">33%</b><div class="progress-track"><div id="taskUsedBar" class="progress-fill green-fill" style="width:33%"></div></div></div></div><div class="project-actions"><button class="text-button" data-go="matching">Find teammates →</button><button class="text-button" data-go="tracker">View project tracker →</button></div></article>
+    </section>
+
+    <section id="matching" class="view">
+      <div class="intro-row"><div><h2>AI teammate matching</h2><p>Find students whose skills fit your project requirements.</p></div><span class="ai-tag">✦ SMART MATCH</span></div>
+      <div class="two-column">
+        <article class="panel"><h3>Project requirements</h3><p class="muted">Edit the skills needed for your project. Separate skills with commas.</p><label>Project title<input id="matchProjectTitle" value="AI Student Project"></label><label>Required skills<input id="requiredSkills" value="Python, Machine Learning, Web Development"></label><label>Project domain<select id="projectDomain"><option>Artificial Intelligence</option><option>Web Development</option><option>Healthcare</option><option>Education</option><option>Data Science</option></select></label><button class="btn btn-primary full-width" id="runMatch">✦ Find best matches</button><p class="helper">Starter scoring uses skill coverage and interest overlap. It is a transparent prototype, not a trained AI model.</p></article>
+        <article class="panel"><div class="panel-heading"><div><h3>Student profiles</h3><p class="muted">Sample data you can edit and extend.</p></div><span class="count" id="studentCount">4 students</span></div><form id="studentForm" class="add-student"><input id="studentName" placeholder="Student name" required><input id="studentSkills" placeholder="Skills, comma separated" required><input id="studentInterests" placeholder="Interests e.g. AI, Web"><button class="btn btn-outline" type="submit">＋ Add</button></form><div id="studentList" class="student-list"></div></article>
+      </div>
+      <article class="panel results-panel"><div class="panel-heading"><div><h3>Ranked recommendations</h3><p class="muted">Best skill coverage appears first.</p></div><span class="ai-tag">MATCH RESULTS</span></div><div id="matchResults" class="match-results"></div></article>
+    </section>
+
+    <section id="budget" class="view">
+      <div class="intro-row"><div><h2>Project budget manager</h2><p>Estimate the cost, record spending, and keep the project within budget.</p></div></div>
+      <div class="budget-overview">
+        <article class="budget-big"><span>Total budget</span><strong id="budgetTotalBig">₹5,000</strong><small>Planned project cost</small></article>
+        <article class="budget-big"><span>Amount spent</span><strong id="budgetSpentBig">₹2,800</strong><small>Recorded expenses</small></article>
+        <article class="budget-big"><span>Remaining</span><strong id="budgetRemainingBig">₹2,200</strong><small id="budgetMessage">Available for upcoming tasks</small></article>
+      </div>
+      <div class="two-column">
+        <article class="panel"><h3>Budget settings</h3><form id="budgetForm"><label>Total project budget (₹)<input id="budgetInput" type="number" min="0" step="1" value="5000" required></label><label>Amount spent so far (₹)<input id="spentInput" type="number" min="0" step="1" value="2800" required></label><button class="btn btn-primary">Update budget</button></form><div class="budget-progress"><div class="panel-heading"><b>Budget usage</b><b id="budgetPercent">56%</b></div><div class="progress-track large"><div id="budgetBar" class="progress-fill" style="width:56%"></div></div><p id="budgetAlert" class="helper">Your project is within budget.</p></div></article>
+        <article class="panel"><h3>Add an expense</h3><form id="expenseForm"><label>Expense description<input id="expenseName" placeholder="e.g. API credits" required></label><label>Category<select id="expenseCategory"><option>Hardware</option><option>Software / API</option><option>Hosting</option><option>Travel</option><option>Other</option></select></label><label>Amount (₹)<input id="expenseAmount" type="number" min="1" required></label><button class="btn btn-primary">＋ Record expense</button></form></article>
+      </div>
+      <article class="panel"><div class="panel-heading"><div><h3>Expense history</h3><p class="muted">Sample expenses and new records appear here.</p></div></div><div class="table-wrap"><table><thead><tr><th>Expense</th><th>Category</th><th>Amount</th><th></th></tr></thead><tbody id="expenseRows"></tbody></table></div></article>
+    </section>
+
+    <section id="tracker" class="view">
+      <div class="intro-row"><div><h2>Project tracker</h2><p>Assign work, set deadlines, and keep everyone aligned.</p></div><span class="status-chip" id="trackerProgressChip">33% complete</span></div>
+      <article class="panel progress-panel"><div class="panel-heading"><div><h3>Overall progress</h3><p class="muted">Based on tasks marked completed.</p></div><strong id="trackerProgressBig">33%</strong></div><div class="progress-track large"><div id="trackerProgressBar" class="progress-fill green-fill" style="width:33%"></div></div><div class="progress-legend"><span><i class="dot done-dot"></i> Completed</span><span><i class="dot doing-dot"></i> In progress</span><span><i class="dot pending-dot"></i> Pending</span></div></article>
+      <div class="two-column">
+        <article class="panel"><h3>Add a task</h3><form id="taskForm"><label>Task name<input id="taskName" placeholder="e.g. Test the AI model" required></label><div class="form-grid"><label>Assignee<input id="taskAssignee" placeholder="Student name"></label><label>Due date<input id="taskDue" type="date"></label></div><label>Priority<select id="taskPriority"><option>Medium</option><option>High</option><option>Low</option></select></label><button class="btn btn-primary">＋ Add task</button></form></article>
+        <article class="panel"><h3>Task summary</h3><div class="task-summary"><div><span>All tasks</span><b id="taskTotal">3</b></div><div><span>Completed</span><b id="taskCompleted">1</b></div><div><span>Pending</span><b id="taskPending">1</b></div></div><p class="helper">Update a task's status using the menu beside each task.</p></article>
+      </div>
+      <article class="panel"><div class="panel-heading"><div><h3>Tasks and milestones</h3><p class="muted">Keep task status current.</p></div></div><div id="taskList" class="task-list"></div></article>
+    </section>
+
+    <section id="finalize" class="view">
+      <div class="intro-row"><div><h2>Product finalization</h2><p>Organize your final product, source code, documentation, and approval status.</p></div></div>
+      <div class="two-column">
+        <article class="panel"><h3>Final product checklist</h3><p class="muted">Tick each item as your team completes it.</p><div class="checklist" id="finalChecklist"><label><input type="checkbox"> Core features implemented</label><label><input type="checkbox"> Testing completed</label><label><input type="checkbox"> Documentation prepared</label><label><input type="checkbox"> Demo presentation ready</label><label><input type="checkbox"> Team reviewed final version</label></div><div class="check-progress"><div class="progress-track"><div id="checklistBar" class="progress-fill green-fill" style="width:0%"></div></div><span id="checklistLabel">0 of 5 completed</span></div></article>
+        <article class="panel"><h3>Submit a deliverable</h3><form id="deliverableForm"><label>Deliverable name<input id="deliverableName" placeholder="Final report / Demo video / Source code" required></label><label>Link (optional)<input id="deliverableLink" type="url" placeholder="https://github.com/..."></label><label>Status<select id="deliverableStatus"><option>Submitted</option><option>Under Review</option><option>Approved</option><option>Needs Changes</option></select></label><button class="btn btn-primary">＋ Add deliverable</button></form></article>
+      </div>
+      <article class="panel"><div class="panel-heading"><div><h3>Deliverables</h3><p class="muted">Your submitted product materials.</p></div><label class="status-select">Product status<select id="productStatus"><option>In Development</option><option>Under Review</option><option>Approved</option><option>Finalized</option></select></label></div><div id="deliverableList" class="deliverable-list"></div><p class="helper">Only mark the product finalized when the team has reviewed and tested the deliverables.</p></article>
+    </section>
+
+    <section id="feedback" class="view">
+      <div class="intro-row"><div><h2>Feedback & evaluation</h2><p>Collect useful reviews from teammates, mentors, and faculty.</p></div></div>
+      <div class="two-column">
+        <article class="panel"><h3>Submit feedback</h3><form id="feedbackForm"><label>Reviewer name<input id="reviewerName" placeholder="Student or faculty name" required></label><label>Rating<select id="feedbackRating"><option value="5">5 — Excellent</option><option value="4">4 — Very good</option><option value="3">3 — Good</option><option value="2">2 — Needs improvement</option><option value="1">1 — Poor</option></select></label><label>Feedback category<select id="feedbackCategory"><option>Overall project</option><option>Innovation</option><option>Functionality</option><option>Team collaboration</option><option>Usability</option></select></label><label>Comments<textarea id="feedbackComment" rows="4" placeholder="What worked well? What should be improved?"></textarea></label><button class="btn btn-primary">Submit review</button></form></article>
+        <article class="panel rating-panel"><span class="stat-icon orange">★</span><p class="muted">Average feedback rating</p><strong class="rating-number" id="averageRating">4.0/5</strong><div id="averageStars" class="stars">★★★★☆</div><p class="muted" id="feedbackCount">1 review recorded</p><div class="rating-note">Use feedback to improve the next version of your product. Keep suggestions actionable and respectful.</div></article>
+      </div>
+      <article class="panel"><div class="panel-heading"><div><h3>Review history</h3><p class="muted">Feedback submitted for this project.</p></div></div><div id="feedbackList" class="feedback-list"></div></article>
+    </section>
+    <footer class="footer">TeamSync AI <span>One workspace for the complete project lifecycle</span></footer>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
